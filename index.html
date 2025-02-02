@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="bg-gradient-to-r from-purple-600 to-blue-600 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-white text-2xl font-bold hover:text-gray-200 transition duration-300">
+                        Hannan Fayyaz 😃
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/system files/first.html" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium transition duration-300 hover:scale-105">
+                        Home
+                    </a>
+                    <a href="/system files/fourth.html" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium transition duration-300 hover:scale-105">
+                        About
+                    </a>
+                    <a href="/system files/third.html" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium transition duration-300 hover:scale-105">
+                        Services
+                    </a>
+                    <a href="/system files/second.html" class="text-white hover:text-gray-200 px-3 py-2 rounded-md text-sm font-medium transition duration-300 hover:scale-105">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <button class="bg-white text-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 transform hover:scale-105 shadow-md">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white hover:text-gray-200 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+            <div class="flex flex-col space-y-4">
+                <a href="/courage/first.html" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                    Home
+                </a>
+                <a href="/courage/fourth.html" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                    About
+                </a>
+                <a href="/courage/third.html" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                    Services
+                </a>
+                <a href="/courage/second.html" class="text-white hover:bg-white/10 px-3 py-2 rounded-md text-base font-medium transition duration-300">
+                    Contact
+                </a>
+                <button class="bg-white text-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 mt-4"><a href="/courage/fifth.html">
+                    Get Started</a>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.querySelector('i').classList.toggle('fa-bars');
+            menuBtn.querySelector('i').classList.toggle('fa-times');
+        });
+    </script>
+    
+    
+    
+    <section class="relative min-h-screen flex items-center justify-center px-4">
+    <!-- Main Card -->
+    <div class="relative w-full max-w-md h-96 rounded-3xl overflow-hidden shadow-2xl">
+        <!-- Background Image -->
+        <img 
+            src="/courage/abb55701-6ad1-4dcd-b8a8-d895636a8d3a.png" 
+            alt="Cover" 
+            class="w-full h-full object-cover absolute inset-0"
+        />
+        
+        <!-- Overlay Content -->
+        <div class="relative z-10 h-full flex flex-col items-center justify-center text-center p-6 bg-black/40">
+            <h1 class="text-4xl font-bold text-white mb-2 drop-shadow-md">Discover Magic</h1>
+            <span class="text-white/90 text-sm font-medium mb-4">✨ Explore the Unknown</span>
+            <button 
+                id="popupBtn"
+                class="mt-4 px-6 py-2 bg-white/90 rounded-full font-semibold text-gray-800 hover:bg-white transition-all duration-300 shadow-lg"
+            ><a href="">
+                Learn More</a>
+            </button>
+        </div>
+    </div>
+
+    <!-- Pop-up -->
+    <div id="popup" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center">
+        <div class="bg-white p-6 rounded-2xl max-w-xs mx-4 shadow-xl animate-scaleIn">
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Special Message ✨</h3>
+            <p class="text-gray-600 text-sm mb-4">
+                Life is a beautiful journey full of magic and wonder. Stay curious and keep exploring!
+            </p>
+            <button 
+                id="closeBtn"
+                class="w-full py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+            >
+                Close
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+    const popupBtn = document.getElementById('popupBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const popup = document.getElementById('popup');
+
+    popupBtn.addEventListener('click', () => popup.classList.remove('hidden'));
+    closeBtn.addEventListener('click', () => popup.classList.add('hidden'));
+</script>
+
+<style>
+    @keyframes scaleIn {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    .animate-scaleIn {
+        animation: scaleIn 0.3s ease-out;
+    }
+</style>
+    <!-- Carousel Section -->
+<section class="relative overflow-hidden mt-5">
+    <!-- Carousel Container -->
+    <div class="carousel-container relative h-64 md:h-96 lg:h-[500px]">
+        <!-- Slide 1 -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="/courage/images (2).jpeg" 
+                 alt="Web Development"
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center px-4 md:px-8">
+                <div class="text-white max-w-2xl">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-4 animate-fadeInUp">
+                        Modern Web Development Solutions
+                    </h2>
+                    <p class="text-sm md:text-lg mb-6 animate-fadeInUp delay-100">
+                        Create stunning websites with cutting-edge technologies and responsive design.
+                    </p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 animate-fadeInUp delay-200">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="/courage/images (3).jpeg" 
+                 alt="Programming"
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center px-4 md:px-8">
+                <div class="text-white max-w-2xl">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-4 animate-fadeInUp">
+                        Clean & Efficient Code
+                    </h2>
+                    <p class="text-sm md:text-lg mb-6 animate-fadeInUp delay-100">
+                        Professional coding practices for scalable and maintainable applications.
+                    </p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 animate-fadeInUp delay-200">
+                        Our Projects
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+            <img src="/courage/images (4).jpeg" 
+                 alt="Responsive Design"
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center px-4 md:px-8">
+                <div class="text-white max-w-2xl">
+                    <h2 class="text-2xl md:text-4xl font-bold mb-4 animate-fadeInUp">
+                        Responsive Web Design
+                    </h2>
+                    <p class="text-sm md:text-lg mb-6 animate-fadeInUp delay-100">
+                        Perfect user experience across all devices and screen sizes.
+                    </p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-all duration-300 animate-fadeInUp delay-200">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"></button>
+        <button class="carousel-dot w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-all"></button>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="carousel-prev absolute top-1/2 left-4 -translate-y-1/2 text-white/80 hover:text-white transition-all">
+        <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+    </button>
+    <button class="carousel-next absolute top-1/2 right-4 -translate-y-1/2 text-white/80 hover:text-white transition-all">
+        <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+    </button>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let currentSlide = 0;
+    let autoSlideInterval;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('opacity-100'));
+        slides.forEach(slide => slide.classList.add('opacity-0'));
+        dots.forEach(dot => dot.classList.remove('bg-white/80', 'w-6'));
+        
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('opacity-100');
+        dots[currentSlide].classList.add('bg-white/80', 'w-6');
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Initialize first slide
+    slides[0].classList.add('opacity-100');
+    dots[0].classList.add('bg-white/80', 'w-6');
+
+    // Navigation dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(autoSlideInterval);
+            showSlide(index);
+            startAutoSlide();
+        });
+    });
+
+    // Navigation arrows
+    document.querySelector('.carousel-prev').addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        showSlide(currentSlide - 1);
+        startAutoSlide();
+    });
+
+    document.querySelector('.carousel-next').addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        showSlide(currentSlide + 1);
+        startAutoSlide();
+    });
+
+    // Start automatic sliding
+    startAutoSlide();
+});
+</script>
+
+
+
+<!-- Accordion Section -->
+<section class="max-w-4xl mx-auto px-4 py-12">
+    <!-- Accordion Container -->
+    <div class="space-y-4">
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item group bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                <span class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    What is Web Development?
+                </span>
+                <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" 
+                     :class="{ 'rotate-180': open }" 
+                     fill="none" 
+                     stroke="currentColor" 
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            <div class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                <div class="px-6 pb-4 pt-0 text-gray-600">
+                    Web development is the process of building and maintaining websites. It includes web design, 
+                    web publishing, web programming, and database management. Developers use various programming 
+                    languages and frameworks to create websites that are functional, user-friendly, and visually appealing.
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item group bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                <span class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    Frontend vs Backend Development
+                </span>
+                <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" 
+                     fill="none" 
+                     stroke="currentColor" 
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            <div class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                <div class="px-6 pb-4 pt-0 text-gray-600">
+                    Frontend development focuses on the visual aspects of a website that users interact with, 
+                    using technologies like HTML, CSS, and JavaScript. Backend development involves server-side 
+                    programming, databases, and application logic, typically using languages like Python, Ruby, 
+                    Java, or Node.js.
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item group bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <button class="flex justify-between items-center w-full px-6 py-4 text-left">
+                <span class="text-xl font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    Popular Web Development Frameworks
+                </span>
+                <svg class="w-6 h-6 text-blue-600 transform transition-transform duration-300" 
+                     fill="none" 
+                     stroke="currentColor" 
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+            </button>
+            <div class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                <div class="px-6 pb-4 pt-0 text-gray-600">
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>React (Frontend JavaScript library)</li>
+                        <li>Angular (Frontend framework)</li>
+                        <li>Vue.js (Progressive JavaScript framework)</li>
+                        <li>Django (Python web framework)</li>
+                        <li>Ruby on Rails (Ruby framework)</li>
+                        <li>Laravel (PHP framework)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.querySelectorAll('.accordion-item').forEach(item => {
+    const button = item.querySelector('button');
+    const content = item.querySelector('.accordion-content');
+    const svg = item.querySelector('svg');
+
+    button.addEventListener('click', () => {
+        const isOpen = content.style.maxHeight;
+        
+        // Close all items
+        document.querySelectorAll('.accordion-content').forEach(c => {
+            c.style.maxHeight = null;
+            c.parentElement.querySelector('svg').classList.remove('rotate-180');
+        });
+
+        // Toggle current item
+        if (!isOpen || isOpen === '0px') {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            svg.classList.add('rotate-180');
+        } else {
+            content.style.maxHeight = null;
+            svg.classList.remove('rotate-180');
+        }
+    });
+});
+</script>
+
+<style>
+.accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-content div {
+    animation: fadeInDown 0.3s ease-out;
+}
+</style>
+
+
+<!-- Modal Container (hidden by default) -->
+<div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm">
+    <!-- Modal Content -->
+    <div class="modal-content relative mx-4 w-full max-w-2xl rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 shadow-2xl transition-all duration-300">
+        <!-- Close Button -->
+        <button class="absolute right-4 top-4 rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+
+        <!-- Modal Body -->
+        <div class="p-8">
+            <!-- Icon -->
+            <div class="mb-6 flex justify-center">
+                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-tr from-purple-600 to-blue-500">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-6 text-center">
+                <h3 class="text-3xl font-bold text-gray-800 md:text-4xl">
+                    Successfully Submitted!
+                </h3>
+                <p class="text-gray-600 md:text-lg">
+                    Your application has been successfully received. We will review your submission and get back to you within 2-3 business days.
+                </p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-x-4 sm:space-y-0">
+                    <button class="rounded-lg bg-purple-600 px-8 py-3 font-semibold text-white hover:bg-purple-700 transition-colors">
+                        Track Progress
+                    </button>
+                    <button class="rounded-lg border-2 border-gray-300 px-8 py-3 font-semibold text-gray-700 hover:border-gray-400 hover:bg-gray-50 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trigger Button -->
+<button id="openModal" class="mx-auto mt-8 block rounded-lg bg-blue-600 px-8 py-3 text-lg font-semibold text-white hover:bg-blue-700">
+    Open Beautiful Modal
+</button>
+
+<script>
+const modal = document.getElementById('modal');
+const openButton = document.getElementById('openModal');
+const closeButtons = document.querySelectorAll('[id^=modal] button');
+
+// Open modal
+openButton.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+    setTimeout(() => {
+        modal.querySelector('.modal-content').classList.add('scale-100', 'opacity-100');
+    }, 10);
+});
+
+// Close modal
+closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        modal.querySelector('.modal-content').classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    });
+});
+
+// Close when clicking outside
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.querySelector('.modal-content').classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    }
+});
+
+// Close with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        modal.querySelector('.modal-content').classList.remove('scale-100', 'opacity-100');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    }
+});
+</script>
+
+<style>
+.modal-content {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.modal-content.scale-100 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+</style>
+
+
+
+<!-- Cards Section -->
+<section class="py-16 px-4 sm:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Services</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">Discover our comprehensive web development solutions tailored for your success</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="overflow-hidden rounded-t-2xl">
+                    <img src="/courage/Blue & White Modern Business Facebook Cover_20241222_194746_0000.png" 
+                         alt="Web Design"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-palette text-white text-lg"></i>
+                        </div>
+                        <span class="ml-4 text-sm font-semibold text-blue-500">Design</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">Crafting beautiful and intuitive interfaces that enhance user experience and engagement.</p>
+                    <div class="flex justify-between items-center">
+                        <button class="text-blue-500 font-semibold hover:text-blue-600 flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                        <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-share-alt text-gray-400 hover:text-blue-500 cursor-pointer"></i>
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="overflow-hidden rounded-t-2xl">
+                    <img src="/courage/images (2).jpeg" 
+                         alt="Development"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-code text-white text-lg"></i>
+                        </div>
+                        <span class="ml-4 text-sm font-semibold text-green-500">Development</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Web Development</h3>
+                    <p class="text-gray-600 mb-4">Building robust and scalable web applications with modern technologies.</p>
+                    <div class="flex justify-between items-center">
+                        <button class="text-green-500 font-semibold hover:text-green-600 flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                        <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-share-alt text-gray-400 hover:text-green-500 cursor-pointer"></i>
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                <div class="overflow-hidden rounded-t-2xl relative">
+                    <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm">
+                        Popular
+                    </div>
+                    <img src="/courage/download (1).jpeg" 
+                         alt="Mobile App"
+                         class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-white text-lg"></i>
+                        </div>
+                        <span class="ml-4 text-sm font-semibold text-purple-500">Mobile</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Mobile Solutions</h3>
+                    <p class="text-gray-600 mb-4">Developing cross-platform mobile applications with native-like performance.</p>
+                    <div class="flex justify-between items-center">
+                        <button class="text-purple-500 font-semibold hover:text-purple-600 flex items-center">
+                            Learn More
+                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                        <div class="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <i class="fas fa-share-alt text-gray-400 hover:text-purple-500 cursor-pointer"></i>
+                            <i class="fas fa-heart text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this CSS for additional animations -->
+<style>
+    .card-hover-effect {
+        transition: all 0.3s ease-in-out;
+    }
+
+    .group:hover .card-content {
+        transform: translateY(-10px);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card-animate {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+</style>
+
+<!-- Initialize animation -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.group');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.animation = `fadeInUp 0.6s ease-out ${index * 0.2}s forwards`;
+    });
+});
+</script>
+</body>
+</html>
